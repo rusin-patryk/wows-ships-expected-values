@@ -277,7 +277,6 @@ export default {
             const cacheExpired = localStorage.getItem('cache_expired');
             if (cacheExpired && parseInt(cacheExpired, 10) > Date.now() && shipCache && shipCache.length) {
                 this.warships = JSON.parse(shipCache);
-                console.log(this.warships);
                 this.loading = false;
                 return;
             }
