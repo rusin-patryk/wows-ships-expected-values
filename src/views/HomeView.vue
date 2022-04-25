@@ -206,7 +206,7 @@
 <script>
 import createWgRepository from '@/repositories/wgRepository';
 import createWnRepository from '@/repositories/wowsNumbersRepository';
-import { getNationFlag, getShipTypeIcon } from '@/helpers';
+import { getNationFlag, getShipTypeIcon, normalizeRequest } from '@/helpers';
 
 export default {
     name: 'HomeView',
@@ -233,7 +233,7 @@ export default {
                 value: 'name',
                 filter: (value) => {
                     if (!this.search) return true;
-                    return value.indexOf(this.search) >= 0;
+                    return normalizeRequest(value).indexOf(normalizeRequest(this.search)) >= 0;
                 },
             }, {
                 text: 'Tier',
