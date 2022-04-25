@@ -7,7 +7,7 @@
                                                                                 target="_blank">wows-numbers.com</a> (<a
             href="https://api.wows-numbers.com/personal/rating/expected/json/"
             target="_blank">json URL</a>). You can read about Personal Rating formula
-            <a href="https://wows-numbers.com/personal/rating/" target="_blank">here</a>. Source of the values as json.
+            <a href="https://wows-numbers.com/personal/rating/" target="_blank">here</a>.
         </div>
         <div class="body-2 text-center mt-3">The data is refreshed every few days.
             <v-btn
