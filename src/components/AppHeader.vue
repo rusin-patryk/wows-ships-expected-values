@@ -12,12 +12,13 @@
             @change="saveThemeState"
         ></v-switch>
         <v-btn
+            href="https://mowe-wows-clan.eu"
             outlined
             small
-            href="https://mowe-wows-clan.eu"
             target="_blank"
         >
-            <v-icon small class="mr-1">mdi-open-in-new</v-icon> MOWE Clan
+            <v-icon class="mr-1" small>mdi-open-in-new</v-icon>
+            MOWE Clan
         </v-btn>
     </v-app-bar>
 </template>

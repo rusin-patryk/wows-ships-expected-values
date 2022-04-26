@@ -3,8 +3,8 @@ export function replaceInText(text, search, replace) {
         search.forEach((element, index) => {
             let replaceEl = replace;
             if (Array.isArray(replace)) replaceEl = replace[index];
-            text = text.replace(element, replaceEl)
-        })
+            text = text.replace(element, replaceEl);
+        });
     } else {
         return text.replace(search, replace);
     }
@@ -12,47 +12,20 @@ export function replaceInText(text, search, replace) {
 }
 
 export function getNationFlag(nation) {
-    const flag = require(`./assets/ships/nations/Wows_flag_${nation}.png`)
+    const flag = require(`./assets/ships/nations/Wows_flag_${ nation }.png`);
     if (flag) return flag;
-    return false
+    return false;
 }
 
 export function getShipTypeIcon(type) {
-    const icon = require(`./assets/ships/types/${type}.png`)
+    const icon = require(`./assets/ships/types/${ type }.png`);
     if (icon) return icon;
-    return false
+    return false;
 }
 
 export function normalizeRequest(request) {
     if (!request) return '';
     return request.toLowerCase().trim()
-        .replace('ą', 'a')
-        .replace('å', 'a')
-        .replace('ä', 'a')
-        .replace('à', 'a')
-        .replace('â', 'a')
-        .replace('ć', 'c')
-        .replace('ç', 'c')
-        .replace('ę', 'e')
-        .replace('é', 'e')
-        .replace('è', 'e')
-        .replace('ê', 'e')
-        .replace('ë', 'e')
-        .replace('î', 'i')
-        .replace('ì', 'i')
-        .replace('ï', 'i')
-        .replace('ł', 'l')
-        .replace('ń', 'n')
-        .replace('ó', 'o')
-        .replace('ò', 'o')
-        .replace('ö', 'o')
-        .replace('ô', 'o')
-        .replace('ø', 'o')
-        .replace('ś', 's')
-        .replace('ß', 'ss')
-        .replace('ü', 'u')
-        .replace('û', 'u')
-        .replace('ù', 'u')
-        .replace('ź', 'z')
-        .replace('ż', 'z');
+        .normalize("NFD")
+        .replace(/[\u00df-\u00ff][\u0300-\u036f][\u1e02-\u1ef3]/g, '');
 }
