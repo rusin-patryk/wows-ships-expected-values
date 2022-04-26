@@ -25,7 +25,7 @@ export function getShipTypeIcon(type) {
 
 export function normalizeRequest(request) {
     if (!request) return '';
-    return request.toLowerCase()
+    return request.toLowerCase().trim()
         .replace('ą', 'a')
         .replace('å', 'a')
         .replace('ä', 'a')
